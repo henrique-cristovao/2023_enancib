@@ -1,0 +1,19 @@
+graph [
+comment "rede social dos alunos"
+directed 0
+
+node [ id {{jsonize(cells.aluno.value)}}       categoria "aluno"       grupo "A"]
+node [ id {{jsonize(cells.curso.value)}}       categoria "curso" 	   grupo "B"]
+node [ id {{jsonize(cells.faseCurso.value)}}   categoria "faseCurso"   grupo "B"]
+node [ id {{jsonize(cells.area.value)}}        categoria "area"        grupo "B"]
+node [ id {{jsonize(cells.estiloFilme.value)}} categoria "estiloFilme" grupo "B"]
+
+edge [ source {{jsonize(cells.aluno.value)}} target {{jsonize(cells.curso.value)}}] 
+edge [ source {{jsonize(cells.aluno.value)}} target {{jsonize(cells.faseCurso.value)}}] 
+edge [ source {{jsonize(cells.aluno.value)}} target {{jsonize(cells.area.value)}}]  
+edge [ source {{jsonize(cells.aluno.value)}} target {{jsonize(cells.estiloFilme.value)}}]  
+
+]
+
+
+

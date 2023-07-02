@@ -1,0 +1,104 @@
+============================================================
+Rede 1 - Adjacency List (CSV)
+
+nome,municipioMoradia,curso,periodo,interessePesquisa,generoFilme
+Lumael ,Vila Velha,Administração,Meio,Finanças,Comédia
+Ludmila,Serra,Administração,Meio,Finanças,Aventura
+Isa,Vitória,Biblioteconomia,Meio,Editoração,Drama
+Juan,Vitória,Biblioteconomia,Meio,Editoração,Terror
+Lucas,Vitória,Biologia,Fim,Bioinformática,Ficção
+Aloisio,Vitória,Economia,Início,Matriz Insumo-Produto,Ficção
+Gilberto,Vitória,Administração,Meio,Gestão de Pessoas,Terror
+João ,Vitória,Estatística,Início,Ciência de Dados,Ação
+Juliana,Belo Horizonte,Ciência da Informação,Início,Mercado financeiro,Drama
+Ágata,Vitória,Estatística,Início,Ciência de Dados,Comédia
+Mariana,Serra,Biblioteconomia,Fim,Comunicação e informação,Investigação
+Patricia,Vila Velha,Biblioteconomia,Fim,Preservação e restauro de acervos,Ficção
+Diéssica,Vila Velha,Administração,Fim,Gestão de Pessoas,Ação
+Ana Clara,Vitória,Oceanografia,Meio,Ciência de Dados,Ficção
+Gabriel,Vitória,Administração,Fim,Comunicação Organizacional,Ação
+Ilana,Vitória,Oceanografia,Início,Mergulho,Terror
+Pedro,Vitória,Oceanografia,Fim,Ciência de Dados,Comédia
+Murilo,Vitória,Estatística,Início,Ciência de Dados,Ficção
+Yago,Vila Velha,Estatística,Início,Ciência de Dados,Ação
+
+
+============================================================
+Rede 2 - aluno e periodo
+
+graph [
+directed 0
+
+node [ id {{jsonize(cells.nome.value)}}    variavel "aluno"   ]
+node [ id {{jsonize(cells.periodo.value)}} variavel "periodo" ]
+
+edge [ source {{jsonize(cells.nome.value)}}  
+       target {{jsonize(cells.periodo.value)}} ]
+
+
+
+============================================================
+Rede 4 - aluno conectado com todo (atributos: variavel)
+
+graph [
+directed 0
+
+
+node [ id {{jsonize(cells.nome.value)}}    
+       variavel "aluno" ]
+node [ id {{jsonize(cells.periodo.value)}} 
+       variavel "periodo" ]
+node [ id {{jsonize(cells.municipioMoradia.value)}} 
+       variavel "municipioMoradia" ]
+node [ id {{jsonize(cells.interessePesquisa.value)}} 
+       variavel "interessePesquisa" ]
+node [ id {{jsonize(cells.generoFilme.value)}} 
+       variavel "generoFilme" ]
+node [ id {{jsonize(cells.curso.value)}} 
+       variavel "curso" ]
+
+edge [ source {{jsonize(cells.nome.value)}}  
+       target {{jsonize(cells.periodo.value)}} ]
+edge [ source {{jsonize(cells.nome.value)}}  
+       target {{jsonize(cells.municipioMoradia.value)}} ]
+edge [ source {{jsonize(cells.nome.value)}}  
+       target {{jsonize(cells.interessePesquisa.value)}} ]
+edge [ source {{jsonize(cells.nome.value)}}  
+       target {{jsonize(cells.generoFilme.value)}} ]
+edge [ source {{jsonize(cells.nome.value)}}  
+       target {{jsonize(cells.curso.value)}} ]
+
+
+
+============================================================
+Rede 6 - aluno conectado com todo (atributos: variavel e agrupamento)
+
+graph [
+directed 0
+
+
+node [ id {{jsonize(cells.nome.value)}}    
+       variavel "aluno" agrupamento1 "grupo A"  ]
+node [ id {{jsonize(cells.periodo.value)}} 
+       variavel "periodo" agrupamento1 "grupo B"]
+node [ id {{jsonize(cells.municipioMoradia.value)}} 
+       variavel "municipioMoradia" agrupamento1 "grupo B"]
+node [ id {{jsonize(cells.interessePesquisa.value)}} 
+       variavel "interessePesquisa" agrupamento1 "grupo B"]
+node [ id {{jsonize(cells.generoFilme.value)}} 
+       variavel "generoFilme" agrupamento1 "grupo B"]
+node [ id {{jsonize(cells.curso.value)}} 
+       variavel "curso" agrupamento1 "grupo B"]
+
+edge [ source {{jsonize(cells.nome.value)}}  
+       target {{jsonize(cells.periodo.value)}} ]
+edge [ source {{jsonize(cells.nome.value)}}  
+       target {{jsonize(cells.municipioMoradia.value)}} ]
+edge [ source {{jsonize(cells.nome.value)}}  
+       target {{jsonize(cells.interessePesquisa.value)}} ]
+edge [ source {{jsonize(cells.nome.value)}}  
+       target {{jsonize(cells.generoFilme.value)}} ]
+edge [ source {{jsonize(cells.nome.value)}}  
+       target {{jsonize(cells.curso.value)}} ]
+
+
